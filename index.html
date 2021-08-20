@@ -6,14 +6,15 @@
 
 <script>
 var puzzles = Array("2021-08-19-294", "2021-08-19-309");
-
+var i = 0
 function randomPuzzle() {
-  var randomPuzzle = puzzles[Math.floor(Math.random() * puzzles.length)];
-  document.getElementById('puzzleframe').src = "https://crosswordlabs.com/embed/" + randomPuzzle;
+  i = (i + 1) % puzzles.length;
+  var nextPuzzle = puzzles[i];
+  document.getElementById('puzzleframe').src = "https://crosswordlabs.com/embed/" + nextPuzzle;
 }
 </script>
   
-<iframe id="puzzleframe" width="600" height="600" style="background-color:white; padding:5px 0px 0 5px; border:3px solid black; margin:auto; display:block" frameborder="0" src="https://crosswordlabs.com/embed/2021-08-19-294"></iframe>
+<iframe id="puzzleframe" width="800" height="800" style="background-color:white; padding:5px 0px 0 5px; border:3px solid black; margin:auto; display:block" frameborder="0" src="https://crosswordlabs.com/embed/2021-08-19-294"></iframe>
 <br>
 <input type="button" id="btnSearch" value="New puzzle" onclick="randomPuzzle();" />
 <p id="message" ></p>
